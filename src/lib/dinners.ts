@@ -16,7 +16,11 @@ export function findDinner(slug: string) {
   return dinners.find((d) => d.slug === slug)
 }
 
-/** Serve local images through the Netlify Image CDN. */
+/** Resize photos via Netlify, or use build-time WebP images on GitHub Pages. */
 export function cdn(src: string, width: number) {
+  if (import.meta.env.VITE_GITHUB_PAGES) {
+    const image = src.replace(/^\/img\//, '').replace(/\.[^.]+$/, '')
+    return `${import.meta.env.BASE_URL}img/optimized/${image}-${width}.webp`
+  }
   return `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}&fm=webp`
 }
