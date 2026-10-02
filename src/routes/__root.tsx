@@ -60,7 +60,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Link to="/" className="logo">
               Ædedolken
             </Link>
-            <p className="tagline">» one dinner every month since forever «</p>
+            <p className="tagline">» det smager som det lugter «</p>
           </header>
           <nav className="navbar">
             <Link to="/" activeOptions={{ exact: true }}>
@@ -75,9 +75,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <div className="ticker" aria-hidden="true">
             <span>
               {latest
-                ? `*** Latest: ${latest.monthName} ${latest.year} at ${latest.host}'s – ${latest.theme} *** Remember to bring wine *** `
-                : '*** Welcome to Ædedolken *** '}
-              Who's hosting next month? ***
+                ? `*** Next up: ${latest.monthName} ${latest.year} at ${latest.host}'s – ${latest.theme} *** Dresscode: Hørskjorte *** `
+                : '*** Medbring alkohol til efter middagen *** '}
+              Velkommen til Ædedolken ***
             </span>
           </div>
           <div className="layout">
