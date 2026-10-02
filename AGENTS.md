@@ -1,13 +1,13 @@
 # AGENTS.md
 
-Website for the food club **Ædedolken**: a retro (00s-style) blog with one post per monthly dinner. TanStack Start + Content Collections, deployed on Netlify. No database – content lives in Markdown.
+Website for the food club **Ædedolken**: a retro (00s-style) blog with one post per monthly dinner. TanStack Start + Content Collections, with Netlify and static GitHub Pages builds. No database – content lives in Markdown.
 
 ## Structure
 
 ```
 content/dinners/YYYY-MM.md   One file per dinner (frontmatter: month, year, host, theme, menu, drinks, photos, quotes)
 content-collections.ts       Zod schema for dinners; transform adds `slug` (YYYY-MM) and `monthName`
-public/img/                  Dinner photos (always rendered via Netlify Image CDN, see `cdn()`)
+public/img/                  Dinner photos (use `cdn()` for Netlify CDN or build-time WebP images)
 src/lib/dinners.ts           Sorted dinners (newest first), years, findDinner(), cdn() image helper
 src/components/DinnerPost.tsx  Renders one dinner post – section order is a product requirement:
                              header (month/year/host/theme) → menu → wines & drinks → photos → (recap) → quotes
@@ -24,3 +24,4 @@ src/styles.css               All retro styling (plain CSS classes, CSS vars in :
 - Keep the post section order intact when editing `DinnerPost`.
 - Never reference `public/img` originals directly – use `cdn(src, width)`.
 - UI copy is in English.
+- `pnpm build:pages` prerenders the homepage and every linked dinner into `dist/client`, optimizes photos, and verifies local URLs. Pages builds live under `/Aededolken-blog-pages/`; set `PAGES_BASE_PATH` to override this.

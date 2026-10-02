@@ -1,0 +1,9 @@
+# Keep browser compatibility data on releases older than the minimum release age.
+overrides:
+  baseline-browser-mapping: 2.11.26
+  electron-to-chromium: 1.5.439
+
+# Sharp's native image tooling is needed to create the static WebP photos.
+allowBuilds:
+  sharp: true
+  esbuild: true
