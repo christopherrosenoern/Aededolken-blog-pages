@@ -10,6 +10,7 @@ const siteDescription =
 
 export const Route = createRootRoute({
   head: () => ({
+    links: [{ rel: 'icon', href: `${import.meta.env.BASE_URL}favicon.ico` }],
     meta: [
       {
         charSet: 'utf-8',
