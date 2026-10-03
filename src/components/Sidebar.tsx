@@ -9,8 +9,7 @@ export default function Sidebar() {
       <div className="side-box">
         <h4>About the club</h4>
         <p>
-          <b>Ædedolken</b> is a food club with one simple rule: one dinner every
-          month of the year. A new host, a new theme, and far too much food.
+          <b>Ædedolken</b> er en madklub udover det sædvanlige. Én middag om måneden på skift med skiftende tema, drinks og dresscode.
         </p>
       </div>
 
